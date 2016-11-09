@@ -64,7 +64,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             public void onClick(View v) {
 
                 ActivityOptionsCompat anim = ActivityOptionsCompat
-                        .makeSceneTransitionAnimation((android.app.Activity) mContext, holder.imageView, "targetImage");
+                        .makeSceneTransitionAnimation(
+								(android.app.Activity) mContext
+								, holder.imageView // view to transitino to the target activity
+								, "targetImage" // shared view name in a target activity's layout
+						);
                 Intent intent = new Intent(mContext, DetailActivity.class);
                 intent.putExtra("position", position);
                 mContext.startActivity(intent, anim.toBundle());

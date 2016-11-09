@@ -59,9 +59,15 @@ public class DetailActivity extends AppCompatActivity{
             textDesc.setVisibility(View.VISIBLE);
             textDesc.setText(mData.get(position).title);
 
-            ViewAnimationUtils.createCircularReveal(textDesc, centerX, centerY, 0, radius).start();
+            ViewAnimationUtils.createCircularReveal(
+                    textDesc // view object
+                    , centerX
+                    , centerY
+                    , 0 // starting radius
+                    , radius // ending radius
+            ).start();
 
-        } else {    // When TextView is Visible
+        } else {    // When TextView is Visible - reverse circular reveal animation
 
             Animator reveal = ViewAnimationUtils.createCircularReveal(
                     textDesc, centerX, centerY, radius, 0);

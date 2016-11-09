@@ -16,6 +16,7 @@
         android:scaleType="centerCrop"
         android:transitionName="targetImage"
         android:src="@drawable/ic_launcher"/>
+  <!--we specified transitionName attribute to detect our shared view -->
 
     <TextView
         android:id="@+id/textDescription"
